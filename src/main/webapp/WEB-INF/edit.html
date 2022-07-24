@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Favicon -->
+</head>
+<body>
+<!-- Subscribe Modal -->
+<div class="subscribe-newsletter-area">
+    <div class="modal fade" id="subsModal" tabindex="-1" role="dialog" aria-labelledby="subsModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <div class="modal-body">
+                    <h5 class="title">Edit My Blog</h5>
+
+                    <form action="/blog/edit" class="newsletterForm" method="post" novalidate="novalidate"
+                          enctype="multipart/form-data">
+                        <input type="text" name="idBlog" hidden th:value="${blog.getIdBlog()}">
+                        <br>
+                        <input type="text" name="title" id="subscribesForm" th:value="${blog.getTitle()}">
+                        <br>
+                        <input type="file" name="file">
+                        <br>
+                        <input type="text" name="contentDisplay" th:value="${blog.getContentDisplay()}">
+                        <br>
+                        <input type="text" name="content" th:value="${blog.getContent()}">
+                        <br>
+                        <button type="submit" class="btn original-btn">Add new blog</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
